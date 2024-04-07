@@ -36,7 +36,7 @@ namespace Visual_Studio_Translator.Adornment.TransResult
 
         private static void _view_LayoutChanged(object sender, TextViewLayoutChangedEventArgs e)
         {
-            _layer.RemoveAllAdornments();
+            //_layer.RemoveAllAdornments();
         }
 
         public static TransAdornmentManager Create(IWpfTextView view)
@@ -66,7 +66,7 @@ namespace Visual_Studio_Translator.Adornment.TransResult
                 {
                     var tc = new TranslatorControl(view.Selection.SelectedSpans[0], transRequest) { RemoveEvent = RemoveAllAdornments };
                     Canvas.SetLeft(tc, g.Bounds.BottomLeft.X);
-                    Canvas.SetTop(tc, g.Bounds.BottomLeft.Y);
+                    Canvas.SetTop(tc, g.Bounds.BottomLeft.Y - 80);
 
                     //
                     //_layer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, tc, null);
